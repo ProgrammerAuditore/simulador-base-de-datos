@@ -1,0 +1,8 @@
+1; // Numero de columnas
+id:1; // Nombre y un id para MITODB
+int:12; // Tipo:Tamaño;
+Este es el identificador de la columnas; // Comentarios;
+NULL; // ValorDefault;
+YES; // Requerido;
+PRIMARY; // Clave;
+AUTO_INCREMENT; // FuncionesExtra;
