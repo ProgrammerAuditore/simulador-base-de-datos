@@ -1,28 +1,19 @@
-#ifndef __H_MITODB__
-#define __H_MITODB__
-#include <iostream>
-#include <fstream>
-#include <cstring>
-#include <cstdlib>
-#include <cstdio>
 #include "mitodb.hpp"
 
-_file_::_file_( std::string _path ){
+_file_fstream_::_file_fstream_( std::string _path ){
+    this->db_name = _path;
     this->db = new std::fstream( _path, std::ios::out | std::ios::in  );
-    if(  this->db->fail() ){
-        std::cout << _path + " : Archivo no encontrado" << std::endl;
-    }
+    this->verificar_fstream();
     this->db->close();
 }
 
-_file_::~_file_(){
+_file_fstream_::~_file_fstream_(){
     delete this->db;
     std::cout << "Objeto elimado" << std::endl;
 }
 
-void mensaje(){
-    _file_* dat = new _file_("mitodb/.xdata");
-    delete dat;
+void _file_fstream_::verificar_fstream(){
+    if(  this->db->fail() ){
+        std::cout << this->db_name  + " : Archivo no encontrado" << std::endl;
+    }
 }
-
-#endif

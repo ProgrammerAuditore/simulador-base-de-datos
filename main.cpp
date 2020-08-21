@@ -1,9 +1,9 @@
-#include <iostream>
 #include "include/mitodb.hpp"
-using namespace std;
+#include "app/app.hpp"
 
 int main(){
-    mensaje();
-    cout << "Hola mundo" << endl;
+    
+    menu_main();
+
     return 0;
 }

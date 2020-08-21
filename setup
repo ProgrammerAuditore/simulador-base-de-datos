@@ -1,5 +1,5 @@
 # Nombre del ejecutable
-AppName=app
+AppName=mitoDB
 
 # Compilador a usar
 CPP=g++
@@ -7,14 +7,20 @@ CPP=g++
 # Contenidos de MITODB
 CMITO=./include/
 
+# Contenidos de APP
+CAPP=./app/
+
 # Archivos objetos requeridos
 # make busca los archivos *.o si no los encuentra,
 # pero encuentra los archivos *.c
 # Genera los archivos *.o automaticamente.
-OBJ=main.o $(CMITO)mitodb.o
+OBJ=main.o $(CMITO)mitodb.o $(CAPP)app.o
 
 all: $(OBJ)
-	$(CPP) -o $(AppName) main.o $(CMITO)mitodb.o
-		
+	$(CPP) -o $(AppName) main.o $(CMITO)mitodb.o $(CAPP)app.o
+
+$(CAPP)app.o: $(CAPP)app.cpp
+	gcc -c -g $(CAPP)app.cpp -I./include/ -I./app/ -o $(CAPP)app.o
+
 clean:
 	rm  -- $(OBJ) $(AppName)
