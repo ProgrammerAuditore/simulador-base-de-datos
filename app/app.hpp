@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <cstdio>
 
+// Funciones para el programa
 void menu_seleccionar_opciones(std::string &);
 void menu_ver_opciones();
 void menu_main();

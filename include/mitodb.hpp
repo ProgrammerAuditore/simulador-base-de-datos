@@ -21,16 +21,9 @@ class _file_fstream_ {
 class data : _file_fstream_ {
     
     public:
-    data( std::string _path) : _file_fstream_( _path ){
-        std::cout << "Hola payaso!" << std::endl;
-    }
-
-    void xxx(){
-        std::cout << this->db_name << std::endl;
-    }
-
+    data( std::string _path) : _file_fstream_( _path ){}
 };
 
-void mensaje();
+void mostrar_base_de_datos();
 
 #endif
